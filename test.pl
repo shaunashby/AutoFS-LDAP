@@ -3,9 +3,10 @@
 use strict;
 use warnings;
 
-use AutoFS::LDAP;
+use AutoFS::Master;
+use AutoFS::Config qw(:all);
 
-my $autofs = AutoFS::LDAP->new( { map => "/etc/auto_master" } );
+my $master = AutoFS::Master->new( { master => AUTOMOUNT_CONFIG_DIR.'/auto_master' });
 
 use Data::Dumper;
-print Dumper($autofs),"\n";
+print Dumper($master),"\n";

@@ -2,7 +2,13 @@ Changes
 MANIFEST
 Makefile.PL
 README
+lib/AutoFS/Config.pm
 lib/AutoFS/LDAP.pm
+lib/AutoFS/Master.pm
+lib/AutoFS/Table.pm
+lib/AutoFS/Table/Entry.pm
 t/00-load.t
+t/01-autofs-master.t
 t/pod-coverage.t
 t/pod.t
+test.pl
