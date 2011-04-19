@@ -1,0 +1,4 @@
+ic	-bg,soft,ro,retrans=3,retry=2,timeo=5,proto=udp		archive6:/export/isdc/arc/rev_pcal_1/idx/&
+scw	-bg,soft,ro,retrans=3,retry=2,timeo=5,proto=udp		archive6:/export/isdc/arc/rev_pcal_1/idx/&
+rev	-bg,soft,ro,retrans=3,retry=2,timeo=5,proto=udp		archive6:/export/isdc/arc/rev_pcal_1/idx/&
+obs	-bg,soft,ro,retrans=3,retry=2,timeo=5,proto=udp		archive6:/export/isdc/arc/rev_pcal_1/idx/&

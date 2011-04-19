@@ -1,0 +1,57 @@
+###############################################################################
+#
+#   File:      /etc/operations/automount/auto_isdc_run_work
+#   Version:   1.11
+#
+#   Author(s): Mathias.Beck@obs.unige.ch (MB)
+#
+#   Purpose:   Provide the automount table for /isdc_run/work
+#
+#   Revision History:
+#
+#     1.11    18-Nov-2009   MB   moved everything back from consdr to nrtdr 
+#
+#     1.10    08-Nov-2009   MB   moved everything from nrtdr to consdr
+#
+#     1.9     17-Oct-2007   MB   moved nrt_pp from NRTPP to archive4
+#
+#     1.8     10-Jan-2006   DR   renamed ARCHIVE3-GE0 to ARCHIVE3
+#
+#     1.7     15-Apr-2003   JB   added noac to ibas
+#
+#     1.6     02-Apr-2003   JB   added w3br_dd
+#
+#     1.5     20-Dec-2002   MB   added nrt_iqla
+#
+#     1.4     19-Dec-2002   MB   added cons_dr 
+#
+#     1.3     26-Nov-2002   MB   added watchdog
+#
+#     1.2     30-May-2002   MB   added nrt_pp, cons_pp
+#
+#     1.1     11-Jan-2002   MB   added tm2egse
+#
+#     1.0.1:  24-Oct-2001   MB   introduced disk_isdc_ops_central
+#
+#      1.0:   24-Sep-2001   MB   initial version
+#
+###############################################################################
+
+cons_dr     -bg,intr,retrans=5,retry=3,timeo=11,proto=udp \
+              consdr:/export/disk_isdc_ops_central/isdc/run/work/&
+cons_pp     -bg,intr,retrans=5,retry=3,timeo=11,proto=udp \
+              conspp:/export/disk_isdc_ops_central/isdc/run/work/&
+ibas        -bg,intr,noac,retrans=5,retry=3,timeo=11,proto=udp \
+              ibas:/export/disk_isdc_ops_central/isdc/run/work/&
+nrt_dr      -bg,intr,retrans=5,retry=3,timeo=11,proto=udp \
+              nrtdr:/export/isdc/nrt/run/work/&
+nrt_iqla    -bg,intr,retrans=5,retry=3,timeo=11,proto=udp \
+      	      archive7:/export/isdc_run/work/&
+nrt_pp      -bg,intr,retrans=5,retry=3,timeo=11,proto=udp \
+              archive4:/export/disk_isdc_ops_central/isdc/run/work/&
+tm2egse     -bg,intr,retrans=5,retry=3,timeo=11,proto=udp \
+              archive7:/export/isdc_run/work/&
+watchdog    -bg,intr,retrans=5,retry=3,timeo=11,proto=udp \
+              alert2:/export/isdc/run/work/&
+w3br_dd     -bg,intr,retrans=5,retry=3,timeo=11,proto=udp \
+              archive2:/export/disk_isdc_ops_central/isdc/run/work/&

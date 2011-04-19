@@ -1,0 +1,2 @@
+adp	-bg,soft,ro,retrans=3,retry=2,timeo=5,proto=udp	archive6:/export/isdc/arc/rev_2/aux/&
+org	-bg,soft,ro,retrans=3,retry=2,timeo=5,proto=udp	archive6:/export/isdc/arc/rev_2/aux/&

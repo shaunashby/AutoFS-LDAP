@@ -1,0 +1,1 @@
+FTP -bg,soft,ro,retrans=3,retry=2,timeo=5,proto=udp	archive2:/export/diskB/&

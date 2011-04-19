@@ -1,0 +1,90 @@
+###############################################################################
+#
+#   File:      /etc/operations/automount/auto_isdc_run_alert
+#   Version:   1.10
+#
+#   Author(s): Mathias.Beck@obs.unige.ch (MB)
+#
+#   Purpose:   Provide the automount table for /isdc_run/alert
+#
+#   Revision History:
+#
+#      1.10  18-Nov-2009   MB   moved everything back from consdr to nrtdr
+#
+#      1.9   08-Nov-2009   MB   moved everything from nrtdr to consdr
+#
+#      1.8     7-Nov-2006   DR   unsplit the mirror on archive2   
+#
+#      1.7.1  22-May-2003   MB   cons, nrt and nrt_qla were wrong 
+#
+#      1.7    14-Feb-2003   MB   all alert repositories except nrt_dr and
+#                                central are now mounted from the alert host.
+#
+#                                This is done to prevent the blocking of the
+#                                opendir command in am_daemon in case of NFS
+#                                problems.
+#                                nrt_dr is left on nrtdr to keep
+#                                everything related to nrt_dr locally on nrtdr
+#
+#                                central  is left on archive2 to have it visible
+#                                on the office network too. In case the central
+#                                repository is not visible to am_daemon, an
+#                                E-mail will be sent but the alert will never be
+#                                put in the central repository
+#
+#      1.6:   12-Dec-2002   MB   added nrt_qla
+#
+#      1.5:   26-Nov-2002   MB   added checkdf
+#                                      watchdog
+#
+#      1.4:   30-Oct-2002   MB   added tst
+#
+#      1.3:   10-Oct-2002   MB   added metadata
+#                                moved cons_pp to consdr to conspp
+#
+#      1.2:   14-Jan-2002   MB   added ifts
+#
+#      1.1:   03-Jan-2002   MB   changed central repository
+#
+#      1.0.1: 24-Oct-2001   MB   introduced disk_isdc_ops_central
+#
+#      1.0:   24-Sep-2001   MB   initial version
+#
+###############################################################################
+
+adp         -bg,intr,retrans=5,retry=3,timeo=11,proto=udp \
+              alert2:/export/isdc/run/alert/&
+central     -bg,intr,retrans=5,retry=3,timeo=11,proto=udp \
+              alert2:/export/isdc/run/alert/&
+checkdf     -bg,intr,retrans=5,retry=3,timeo=11,proto=udp \
+              alert2:/export/isdc/run/alert/&
+cons        -bg,intr,retrans=5,retry=3,timeo=11,proto=udp \
+              alert2:/export/isdc/run/alert/&
+cons_dr     -bg,intr,retrans=5,retry=3,timeo=11,proto=udp \
+              alert2:/export/isdc/run/alert/&
+cons_pp     -bg,intr,retrans=5,retry=3,timeo=11,proto=udp \
+              alert2:/export/isdc/run/alert/&
+ibas        -bg,intr,retrans=5,retry=3,timeo=11,proto=udp \
+              alert2:/export/isdc/run/alert/&
+ifts        -bg,intr,retrans=5,retry=3,timeo=11,proto=udp \
+              alert2:/export/isdc/run/alert/&
+ingest      -bg,intr,retrans=5,retry=3,timeo=11,proto=udp \
+              alert2:/export/isdc/run/alert/&
+metadata    -bg,intr,retrans=5,retry=3,timeo=11,proto=udp \
+              alert2:/export/isdc/run/alert/&
+nrt         -bg,intr,retrans=5,retry=3,timeo=11,proto=udp \
+              alert2:/export/isdc/run/alert/&
+nrt_dr      -bg,intr,retrans=5,retry=3,timeo=11,proto=udp \
+              nrtdr:/export/isdc/nrt/run/alert/&
+nrt_pp      -bg,intr,retrans=5,retry=3,timeo=11,proto=udp \
+              alert2:/export/isdc/run/alert/&
+nrt_qla     -bg,intr,retrans=5,retry=3,timeo=11,proto=udp \
+              alert2:/export/isdc/run/alert/&
+nrtdrmon    -bg,intr,retrans=5,retry=3,timeo=11,proto=udp \
+              alert2:/export/isdc/run/alert/&
+nrtppmon    -bg,intr,retrans=5,retry=3,timeo=11,proto=udp \
+              alert2:/export/isdc/run/alert/&
+tst         -bg,intr,retrans=5,retry=3,timeo=11,proto=udp \
+              alert2:/export/isdc/run/alert/&
+watchdog    -bg,intr,retrans=5,retry=3,timeo=11,proto=udp \
+              alert2:/export/isdc/run/alert/&

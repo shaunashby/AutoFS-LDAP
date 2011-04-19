@@ -1,0 +1,70 @@
+###############################################################################
+#
+#   File:      /etc/operations/automount/auto_isdc_run_log
+#   Version:   1.9
+#
+#   Author(s): Mathias.Beck@obs.unige.ch (MB)
+#
+#   Purpose:   Provide the automount table for /isdc_run/log
+#
+#   Revision History:
+#
+#     1.9     18-Nov-2009   MB   moved back from consdr to nrtdr
+#
+#     1.8     08-Nov-2009   MB   moved everything from nrtdr to consdr
+#
+#     1.7     26-Oct-2007   MB   moved data_rights, ingest and metadata 
+#                                from ARCINGEST:diskA3 to archive4
+#     1.6     17-Oct-2007   MB   moved nrt_pp from NRTPP to archive4
+#
+#     1.5     21-Feb-2007   DR   new disk on ARCINGEST
+#
+#     1.4     10-Mar-2004   MB   added data_rights
+#
+#     1.3     26-Nov-2002   MB   added checkdf
+#                                      watchdog
+#
+#     1.2     30-Oct-2002   MB   added alert_tst
+#
+#     1.1     11-Jan-2002   MB   added tm2egse and cp_nrt_data
+#
+#     1.0.2   31-Oct-2001   MB   introduced metadata
+#
+#     1.0.1   24-Oct-2001   MB   introduced disk_isdc_ops_central
+#
+#      1.0:   24-Sep-2001   MB   initial version
+#
+###############################################################################
+
+alert       -bg,intr,retrans=5,retry=3,timeo=11,proto=udp \
+              alert2:/export/isdc/run/log/&
+alert_tst   -bg,intr,retrans=5,retry=3,timeo=11,proto=udp \
+              alert2:/export/isdc/run/log/&
+checkdf     -bg,intr,retrans=5,retry=3,timeo=11,proto=udp \
+              archive7:/export/isdc_run/log/&
+cons_dr     -bg,intr,retrans=5,retry=3,timeo=11,proto=udp \
+              consdr:/export/disk_isdc_ops_central/isdc/run/log/&
+cons_pp     -bg,intr,retrans=5,retry=3,timeo=11,proto=udp \
+              consdr:/export/disk_isdc_ops_central/isdc/run/log/&
+cp_nrt_data -bg,intr,retrans=5,retry=3,timeo=11,proto=udp \
+              archive7:/export/isdc_run/log/&
+data_rights -bg,intr,retrans=5,retry=3,timeo=11,proto=udp \
+              archive4:/export/disk_isdc_ops_central/isdc/run/log/&
+ibas        -bg,intr,retrans=5,retry=3,timeo=11,proto=udp \
+              ibas:/export/disk_isdc_ops_central/isdc/run/log/&
+ifts        -bg,intr,retrans=5,retry=3,timeo=11,proto=udp \
+              isdcifts:/export/disk_isdc_ops_central/isdc/run/log/&
+ingest      -bg,intr,retrans=5,retry=3,timeo=11,proto=udp \
+              archive4:/export/disk_isdc_ops_central/isdc/run/log/&
+metadata    -bg,intr,retrans=5,retry=3,timeo=11,proto=udp \
+              archive4:/export/disk_isdc_ops_central/isdc/run/log/&
+nrt_dr      -bg,intr,retrans=5,retry=3,timeo=11,proto=udp \
+              nrtdr:/export/isdc/nrt/run/log/&
+nrt_input   -bg,intr,retrans=5,retry=3,timeo=11,proto=udp \
+              alert2:/export/isdc/run/log/&
+nrt_pp      -bg,intr,retrans=5,retry=3,timeo=11,proto=udp \
+              archive4:/export/disk_isdc_ops_central/isdc/run/log/&
+tm2egse     -bg,intr,retrans=5,retry=3,timeo=11,proto=udp \
+              archive7:/export/isdc_run/log/&
+watchdog    -bg,intr,retrans=5,retry=3,timeo=11,proto=udp \
+              alert2:/export/isdc/run/log/&

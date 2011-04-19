@@ -1,0 +1,18 @@
+#
+# 10-Jan-2004   DR   moved ARCHIVE3-GE0 to ARCHIVE3
+#
+# 17-Oct-2003   MB   added pck_merged
+#
+# 29-May-2002   MB   added pck_e2e_e_1
+#                          pck_1
+#                          tst_e2e_e_1
+#                          ops_1
+pck_gsit_2     -rw,nosuid,hard,intr,bg,retry=1,timeo=11,proto=udp    archive7:/export/cons/&
+pck_e2e_e_1    -rw,nosuid,hard,intr,bg,retry=1,timeo=11,proto=udp    archive7:/export/cons/&
+pck_1 	       -rw,nosuid,hard,intr,bg,retry=1,timeo=11,proto=udp    archive7:/export/cons/&
+pck_merged     -rw,nosuid,hard,intr,bg,retry=1,timeo=11,proto=udp    archive7:/export/cons/&
+#
+tst_gsit_2     -rw,nosuid,hard,intr,bg,retry=1,timeo=11,proto=udp    archive7:/export/cons/&
+tst_e2e_e_1    -rw,nosuid,hard,intr,bg,retry=1,timeo=11,proto=udp    archive7:/export/cons/&
+ops_1 	       -rw,nosuid,hard,intr,bg,retry=1,timeo=11,proto=udp    archive7:/export/cons/&
+ops_sa 	       -rw,nosuid,hard,intr,bg,retry=1,timeo=11,proto=udp    archive7:/export/cons/&

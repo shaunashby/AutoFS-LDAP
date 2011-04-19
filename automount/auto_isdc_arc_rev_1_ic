@@ -1,0 +1,7 @@
+ibis	-bg,soft,ro,retrans=3,retry=2,timeo=5,proto=udp archive4:/export/diskG5/rev_2/ic/&
+irem	-bg,soft,ro,retrans=3,retry=2,timeo=5,proto=udp archive4:/export/diskG5/rev_2/ic/&
+jmx1	-bg,soft,ro,retrans=3,retry=2,timeo=5,proto=udp archive4:/export/diskG5/rev_2/ic/&
+jmx2	-bg,soft,ro,retrans=3,retry=2,timeo=5,proto=udp archive4:/export/diskG5/rev_2/ic/&
+omc	-bg,soft,ro,retrans=3,retry=2,timeo=5,proto=udp archive4:/export/diskG5/rev_2/ic/&
+spi	-bg,soft,ro,retrans=3,retry=2,timeo=5,proto=udp archive4:/export/diskG5/rev_2/ic/&
+sc	-bg,soft,ro,retrans=3,retry=2,timeo=5,proto=udp archive4:/export/diskG5/rev_2/ic/&

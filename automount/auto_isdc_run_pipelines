@@ -1,0 +1,31 @@
+###############################################################################
+#
+#   File:      /etc/operations/automount/auto_isdc_run_pipelines
+#   Version:   1.1.2
+#
+#   Author(s): Mathias.Beck@obs.unige.ch (MB)
+#
+#   Purpose:   Provide the automount table for /isdc_run/pipelines
+#
+#   Revision History:
+#
+#     1.1.3:  10-Jan-2006   DR   renamed ARCHIVE3 to ARCHIVE3
+#
+#     1.1.2:  06-Jun-2002   MB   renamed distr to arc
+#
+#     1.1.1:  24-Oct-2001   MB   introduced disk_isdc_ops_central
+#
+#     1.1:    16-Oct-2001   MB   added distr and adp
+#
+#     1.0:    24-Sep-2001   MB   initial version
+#
+###############################################################################
+
+adp         -bg,intr,retrans=5,retry=3,timeo=11,proto=udp \
+              isdcifts:/export/disk_isdc_ops_central/isdc/run/pipelines/&
+arc         -bg,intr,retrans=5,retry=3,timeo=11,proto=udp \
+              archive7:/export/isdc_run/pipelines/&
+cons        -bg,intr,retrans=5,retry=3,timeo=11,proto=udp \
+              archive7:/export/isdc_run/pipelines/&
+nrt         -bg,intr,retrans=5,retry=3,timeo=11,proto=udp \
+              alert2:/export/isdc/run/pipelines/&

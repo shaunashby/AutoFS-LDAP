@@ -1,0 +1,27 @@
+#
+# 11-Nov-2009   MB   moved pck_1,ops_for_rttmd from ARCHIVE5 to nrtdr
+#
+# 10-Jan-2004   DR   moved ARCHIVE3 to ARCHIVE3
+#
+# 08-Oct-2002   MB   added ops_for_rttmd
+#                          pck_2
+#                          ops_2
+#
+# 29-May-2002   MB   added pck_svt_f_1
+#                          pck_e2e_f_1
+#                          pck_1
+#                          tst_svt_f_1
+#                          tst_e2e_f_1
+#                          ops_1
+#
+# 04-Jan-2002   MB   added pck_svt_e_1
+#                          pck_e2e_e_1
+#                          pck_pcal_1
+#                          tst_svt_e_1
+#                          tst_e2e_e_1
+#                          tst_pcal_1
+#
+pck_1		-rw,nosuid,hard,intr,bg,retry=1,timeo=11,proto=udp    nrtdr:/export/isdc/nrt/&
+ops_for_rttmd	-rw,nosuid,hard,intr,bg,retry=1,timeo=11,proto=udp    nrtdr:/export/isdc/nrt/&
+#
+ops_1 	        -rw,nosuid,hard,intr,bg,retry=1,timeo=11,proto=udp    archive3:/export/nrtraid/isdc/nrt/&

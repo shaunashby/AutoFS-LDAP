@@ -1,0 +1,28 @@
+###############################################################################
+#
+#   File:      /etc/operations/automount/auto_isdc_run_ifts
+#   Version:   1.1
+#
+#   Author(s): Mathias.Beck@obs.unige.ch (MB)
+#
+#   Purpose:   Provide the automount table for /isdc_run/ifts
+#
+#   Revision History:
+#
+#      1.1    10-Jan-2002   MB   added outbox.tmp
+#
+#      1.0.1  24-Oct-2001   MB   introduced disk_isdc_ops_central
+#
+#      1.0    24-Sep-2001   MB   initial version
+#
+###############################################################################
+
+inbox       -bg,intr,retrans=5,retry=3,timeo=11,proto=udp \
+              isdcifts:/export/disk_isdc_ops_central/isdc/run/ifts/&
+inbox.tmp   -bg,intr,retrans=5,retry=3,timeo=11,proto=udp \
+              isdcifts:/export/disk_isdc_ops_central/isdc/run/ifts/&
+outbox      -bg,intr,retrans=5,retry=3,timeo=11,proto=udp \
+              isdcifts:/export/disk_isdc_ops_central/isdc/run/ifts/&
+outbox.tmp  -bg,intr,retrans=5,retry=3,timeo=11,proto=udp \
+              isdcifts:/export/disk_isdc_ops_central/isdc/run/ifts/&
+

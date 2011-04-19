@@ -1,0 +1,11 @@
+#Directory mounted under the "/usr/local" tree
+#All the parameters are set to minimize the troubles caused by
+#unavailability of a non responding server. The goal is to be able
+#to work without too long timeout even if the server is not
+#responding
+bin	${HOST}:/export/local_operations/arch/local/${OSNAME}_${OSREL}/${ARCH}/&
+lib	${HOST}:/export/local_operations/arch/local/${OSNAME}_${OSREL}/${ARCH}/&
+libexec	${HOST}:/export/local_operations/arch/local/${OSNAME}_${OSREL}/${ARCH}/&
+sbin	${HOST}:/export/local_operations/arch/local/${OSNAME}_${OSREL}/${ARCH}/&
+logs -bg,soft,retry=1,timeo=11	archive7:/export/system/&
+*	${HOST}:/export/local_operations/all_arch/local/&

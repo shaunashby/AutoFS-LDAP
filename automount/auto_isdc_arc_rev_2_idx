@@ -1,0 +1,14 @@
+ic      -bg,soft,ro,retrans=3,retry=2,timeo=5,proto=udp         archive6:/export/isdc/arc/rev_2/idx/&
+scw     -bg,soft,ro,retrans=3,retry=2,timeo=5,proto=udp         archive6:/export/isdc/arc/rev_2/idx/&
+rev     -bg,soft,ro,retrans=3,retry=2,timeo=5,proto=udp         archive6:/export/isdc/arc/rev_2/idx/&
+obs     -bg,soft,ro,retrans=3,retry=2,timeo=5,proto=udp         archive6:/export/isdc/arc/rev_2/idx/&
+obs_jmx -bg,soft,ro,retrans=3,retry=2,timeo=5,proto=udp         archive6:/export/isdc/arc/rev_2/idx/&
+obs_omc -bg,soft,ro,retrans=3,retry=2,timeo=5,proto=udp         archive6:/export/isdc/arc/rev_2/idx/&
+obs_spi -bg,soft,ro,retrans=3,retry=2,timeo=5,proto=udp         archive6:/export/isdc/arc/rev_2/idx/&
+obs_isgri -bg,soft,ro,retrans=3,retry=2,timeo=5,proto=udp         archive6:/export/isdc/arc/rev_2/idx/&
+obs_picsit  -bg,soft,ro,retrans=3,retry=2,timeo=5,proto=udp         archive6:/export/isdc/arc/rev_2/idx/&
+obs_jmx_osa_7v0 -bg,soft,ro,retrans=3,retry=2,timeo=5,proto=udp         archive6:/export/isdc/arc/rev_2/idx/&
+obs_omc_osa_7v0 -bg,soft,ro,retrans=3,retry=2,timeo=5,proto=udp         archive6:/export/isdc/arc/rev_2/idx/&
+obs_spi_osa_7v0 -bg,soft,ro,retrans=3,retry=2,timeo=5,proto=udp         archive6:/export/isdc/arc/rev_2/idx/&
+obs_isgri_osa_7v0 -bg,soft,ro,retrans=3,retry=2,timeo=5,proto=udp         archive6:/export/isdc/arc/rev_2/idx/&
+obs_picsit_osa_7v0  -bg,soft,ro,retrans=3,retry=2,timeo=5,proto=udp         archive6:/export/isdc/arc/rev_2/idx/&

@@ -1,0 +1,6 @@
+#Table qui sert a monter le logiciel de reference de l'ISDC Seulement pour egcc
+#qui doit être différencié de gcc).
+bin ${HOST}:/export/local_operations/arch/egcc/${OSNAME}_${OSREL}/${ARCH}/& 
+lib ${HOST}:/export/local_operations/arch/egcc/${OSNAME}_${OSREL}/${ARCH}/& 
+sparc-sun-solaris2.6 ${HOST}:/export/local_operations/arch/egcc/${OSNAME}_${OSREL}/${ARCH}/& 
+*	${HOST}:/export/local_operations/all_arch/egcc/&

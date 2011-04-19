@@ -1,0 +1,1 @@
+* -bg,ro,soft,retrans=3,retry=1,timeo=11,proto=udp  archive2:/export/diskD3/testdata/pck_emspi1/&

@@ -1,0 +1,7 @@
+ibis	-bg,soft,ro,retrans=3,retry=2,timeo=5,proto=udp archive6:/export/isdc/arc/rev_pcal_1/ic/&
+irem	-bg,soft,ro,retrans=3,retry=2,timeo=5,proto=udp archive6:/export/isdc/arc/rev_pcal_1/ic/&
+jmx1	-bg,soft,ro,retrans=3,retry=2,timeo=5,proto=udp archive6:/export/isdc/arc/rev_pcal_1/ic/&
+jmx2	-bg,soft,ro,retrans=3,retry=2,timeo=5,proto=udp archive6:/export/isdc/arc/rev_pcal_1/ic/&
+omc	-bg,soft,ro,retrans=3,retry=2,timeo=5,proto=udp archive6:/export/isdc/arc/rev_pcal_1/ic/&
+spi	-bg,soft,ro,retrans=3,retry=2,timeo=5,proto=udp archive6:/export/isdc/arc/rev_pcal_1/ic/&
+sc	-bg,soft,ro,retrans=3,retry=2,timeo=5,proto=udp archive6:/export/isdc/arc/rev_pcal_1/ic/&

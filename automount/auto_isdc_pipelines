@@ -1,0 +1,2 @@
+nrt	-bg,retrans=2,retry=1,timeo=11,proto=udp	alert2:/export/isdc/run/pipelines/&
+cons	-bg,retrans=2,retry=1,timeo=11,proto=udp	archive3:/export/consraid/pipelines/&

@@ -1,0 +1,23 @@
+###############################################################################
+#
+#   File:      nrtpp:/etc/operations/automount/auto_isdc_run_ingest
+#   Version:   1.0.1
+#
+#   Author(s): Mathias.Beck@obs.unige.ch (MB)
+#
+#   Purpose:   Provide the automount table for /isdc_run/ingest
+#
+#   Revision History:
+#
+#     1.0.1   24-Oct-2001   MB   introduced disk_isdc_ops_central
+#
+#      1.0:   26-Sep-2001   MB   initial version
+#
+###############################################################################
+
+MDIFDir     -bg,intr,retrans=5,retry=3,timeo=11,proto=udp \
+              arcingest:/export/disk_isdc_ops_central/isdc/run/ingest/&
+MDIFTmpDir  -bg,intr,retrans=5,retry=3,timeo=11,proto=udp \
+              arcingest:/export/disk_isdc_ops_central/isdc/run/ingest/&
+queue       -bg,intr,retrans=5,retry=3,timeo=11,proto=udp \
+              arcingest:/export/disk_isdc_ops_central/isdc/run/ingest/&

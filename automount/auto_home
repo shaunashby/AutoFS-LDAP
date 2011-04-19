@@ -1,0 +1,59 @@
+# User's home directories
+# Note that * wildcard doesn't work with the Fedora 7 automounter - the users need to
+# be explicitly added here
+
+arc_dd          -bg,retrans=2,retry=1,timeo=11,proto=udp      consmgt:/export/diskA2/home/&
+arc_mdb         -bg,retrans=2,retry=1,timeo=11,proto=udp      consmgt:/export/diskA2/home/&
+arc_sci         -bg,retrans=2,retry=1,timeo=11,proto=udp      consmgt:/export/diskA2/home/&
+arc_w3br        -bg,retrans=2,retry=1,timeo=11,proto=udp      consmgt:/export/diskA2/home/&
+archive         -bg,retrans=2,retry=1,timeo=11,proto=udp      nrtmgt:/export/diskA2/home/&
+ashby           -bg,retrans=2,retry=1,timeo=11,proto=udp      nrtmgt:/export/diskA2/home/&
+schmital        -bg,retrans=2,retry=1,timeo=11,proto=udp      nrtmgt:/export/diskA2/home/&
+aubord          -bg,retrans=2,retry=1,timeo=11,proto=udp      nrtmgt:/export/diskA2/home/&
+beck            -bg,retrans=2,retry=1,timeo=11,proto=udp      nrtmgt:/export/diskA2/home/&
+beckmann        -bg,retrans=2,retry=1,timeo=11,proto=udp      nrtmgt:/export/diskA2/home/&
+binko           -bg,retrans=2,retry=1,timeo=11,proto=udp      nrtmgt:/export/diskA2/home/&
+dubath          -bg,retrans=2,retry=1,timeo=11,proto=udp      nrtmgt:/export/diskA2/home/&
+ferrigno        -bg,retrans=2,retry=1,timeo=11,proto=udp      nrtmgt:/export/diskA2/home/&
+hroch           -bg,retrans=2,retry=1,timeo=11,proto=udp      consmgt:/export/diskA2/home/&
+iftsdev         -bg,retrans=2,retry=1,timeo=11,proto=udp      isdcifts:/export/diskB2/home/&
+iftsops         -bg,retrans=2,retry=1,timeo=11,proto=udp      isdcifts:/export/diskB2/home/&
+isdc            -bg,retrans=2,retry=1,timeo=11,proto=udp      nrtmgt:/export/diskA2/home/&
+isdc_cms        -bg,retrans=2,retry=1,timeo=11,proto=udp      nrtmgt:/export/diskA2/home/&
+isdc_tst        -bg,retrans=2,retry=1,timeo=11,proto=udp      nrtmgt:/export/diskA2/home/&
+jubork          -bg,retrans=2,retry=1,timeo=11,proto=udp      nrtmgt:/export/diskA2/home/&
+lubinski        -bg,retrans=2,retry=1,timeo=11,proto=udp      nrtmgt:/export/diskA2/home/&
+morisset        -bg,retrans=2,retry=1,timeo=11,proto=udp      nrtmgt:/export/diskA2/home/&
+meharga         -bg,retrans=2,retry=1,timeo=11,proto=udp      nrtmgt:/export/diskA2/home/&
+mowlavi         -bg,retrans=2,retry=1,timeo=11,proto=udp      nrtmgt:/export/diskA2/home/&
+muflon          -bg,retrans=2,retry=1,timeo=11,proto=udp      nrtmgt:/export/diskA2/home/&
+nhadder         -bg,retrans=2,retry=1,timeo=11,proto=udp      nrtmgt:/export/diskA2/home/&
+obs_bkp         -bg,retrans=2,retry=1,timeo=11,proto=udp      nrtmgt:/export/diskA2/home/&
+oneel           -bg,retrans=2,retry=1,timeo=11,proto=udp      nrtmgt:/export/diskA2/home/&
+operator        -bg,retrans=2,retry=1,timeo=11,proto=udp      consmgt:/export/diskA2/home/&
+ops_adp         -bg,retrans=2,retry=1,timeo=11,proto=udp      isdcifts:/export/diskB2/home/&
+ops_am          -bg,retrans=2,retry=1,timeo=11,proto=udp      alert2:/export/home/&
+ops_cons        -bg,retrans=2,retry=1,timeo=11,proto=udp      nrtmgt:/export/diskA2/home/&
+ops_dd          -bg,retrans=2,retry=1,timeo=11,proto=udp      nrtmgt:/export/diskA2/home/&
+ops_egse        -bg,retrans=2,retry=1,timeo=11,proto=udp      isdcops:/export/diskA2/home/&
+ops_ibas        -bg,retrans=2,retry=1,timeo=11,proto=udp      ibas:/export/diskA2/home/&
+ops_nrt         -bg,retrans=2,retry=1,timeo=11,proto=udp      nrtdr:/export/home/&
+ops_rp          -bg,retrans=2,retry=1,timeo=11,proto=udp      nrtmgt:/export/diskA2/home/&
+ops_ssa         -bg,retrans=2,retry=1,timeo=11,proto=udp      nrtmgt:/export/diskA2/home/&
+oracle          -bg,retrans=2,retry=1,timeo=11,proto=udp      nrtmgt:/export/diskA2/home/&
+paltani         -bg,retrans=2,retry=1,timeo=11,proto=udp      nrtmgt:/export/diskA2/home/&
+pkretsch        -bg,retrans=2,retry=1,timeo=11,proto=udp      nrtmgt:/export/diskA2/home/&
+pottschm        -bg,retrans=2,retry=1,timeo=11,proto=udp      nrtmgt:/export/diskA2/home/&
+produit         -bg,retrans=2,retry=1,timeo=11,proto=udp      nrtmgt:/export/diskA2/home/&
+rohlfs          -bg,retrans=2,retry=1,timeo=11,proto=udp      nrtmgt:/export/diskA2/home/&
+rochatp         -bg,retrans=2,retry=1,timeo=11,proto=udp      nrtmgt:/export/diskA2/home/&
+scientist       -bg,retrans=2,retry=1,timeo=11,proto=udp      consmgt:/export/diskA2/home/&
+shaw            -bg,retrans=2,retry=1,timeo=11,proto=udp      consmgt:/export/diskA2/home/&
+shift           -bg,retrans=2,retry=1,timeo=11,proto=udp      consmgt:/export/diskA2/home/&
+tcour           -bg,retrans=2,retry=1,timeo=11,proto=udp      consmgt:/export/diskA2/home/&
+tlock           -bg,retrans=2,retry=1,timeo=11,proto=udp      consmgt:/export/diskA2/home/&
+walter          -bg,retrans=2,retry=1,timeo=11,proto=udp      nrtmgt:/export/diskA2/home/&
+tramacer        -bg,retrans=2,retry=1,timeo=11,proto=udp      nrtmgt:/export/diskA2/home/&
+wendt           -bg,retrans=2,retry=1,timeo=11,proto=udp      nrtmgt:/export/diskA2/home/&
+wyss-cho        -bg,retrans=2,retry=1,timeo=11,proto=udp      nrtmgt:/export/diskA2/home/&
+

@@ -1,0 +1,2 @@
+arc_distr -bg,soft,ro,retrans=3,retry=2,timeo=5,proto=udp	archive6:/export/isdc/arc/FTP/&
+ibas -bg,soft,ro,retrans=3,retry=2,timeo=5,proto=udp		archive2:/export/diskS1/FTP/&

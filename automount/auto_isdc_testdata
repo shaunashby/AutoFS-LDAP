@@ -1,0 +1,16 @@
+ori_emjemx1	-rw,nosuid,hard,intr,retry=1,timeo=11,udp=6	archive3:/export/diskB1/isdc/testdata/&
+ori_emjemx2	-rw,nosuid,hard,intr,retry=1,timeo=11,udp=6	archive3:/export/diskB1/isdc/testdata/&
+ori_emomc1	-rw,nosuid,hard,intr,retry=1,timeo=11,udp=6	archive3:/export/diskB1/isdc/testdata/&
+pck_emjemx1	-rw,nosuid,hard,intr,retry=1,timeo=11,udp=6	archive3:/export/diskB1/isdc/testdata/&
+pck_emjemx2	-rw,nosuid,hard,intr,retry=1,timeo=11,udp=6	archive3:/export/diskB1/isdc/testdata/&
+pck_emomc1	-rw,nosuid,hard,intr,retry=1,timeo=11,udp=6	archive3:/export/diskB1/isdc/testdata/&
+pck_emsft1	-rw,nosuid,hard,intr,retry=1,timeo=11,udp=6	archive3:/export/diskB1/isdc/testdata/&
+pck_emspi1	-rw,nosuid,hard,intr,retry=1,timeo=11,udp=6	archive3:/export/diskB1/isdc/testdata/&
+tst_arc		-rw,nosuid,hard,intr,retry=1,timeo=11,udp=6	archive3:/export/diskB1/isdc/testdata/&
+tst_arc.old	-rw,nosuid,hard,intr,retry=1,timeo=11,udp=6	archive3:/export/diskB1/isdc/testdata/&
+tst_emjemx1	-rw,nosuid,hard,intr,retry=1,timeo=11,udp=6	archive3:/export/diskB1/isdc/testdata/&
+tst_emjemx2	-rw,nosuid,hard,intr,retry=1,timeo=11,udp=6	archive3:/export/diskB1/isdc/testdata/&
+tst_emomc1	-rw,nosuid,hard,intr,retry=1,timeo=11,udp=6	archive3:/export/diskB1/isdc/testdata/&
+tst_emsft1	-rw,nosuid,hard,intr,retry=1,timeo=11,udp=6	archive3:/export/diskB1/isdc/testdata/&
+tst_emsft2	-rw,nosuid,hard,intr,retry=1,timeo=11,udp=6	archive3:/export/diskB1/isdc/testdata/&
+tst_emspi1	-rw,nosuid,hard,intr,retry=1,timeo=11,udp=6	archive3:/export/diskB1/isdc/testdata/&
