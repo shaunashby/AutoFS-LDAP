@@ -13,7 +13,7 @@
 use strict;
 use warnings;
 
-use Test::More tests => 1;
+use Test::More tests => 4;
 
 use AutoFS::Master;
 use AutoFS::Config qw(:all);
@@ -21,3 +21,8 @@ use AutoFS::Config qw(:all);
 my $master = AutoFS::Master->new( { master => AUTOMOUNT_CONFIG_DIR.'/auto_master' });
 
 cmp_ok(ref($master),'eq','AutoFS::Master');
+can_ok($master,"name");
+can_ok($master,"tables");
+
+my $tables = $master->tables;
+isa_ok($tables,'ARRAY');
