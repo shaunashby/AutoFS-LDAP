@@ -41,6 +41,8 @@ sub new() {
 
 sub name() { return shift->{master} }
 
+sub tables() { return shift->{tables} }
+
 sub _read() {
 	my ($self,$master) = @_;
 	$self->{tables} = [];
