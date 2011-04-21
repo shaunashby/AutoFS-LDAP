@@ -43,9 +43,9 @@ alert_tst   -bg,intr,retrans=5,retry=3,timeo=11,proto=udp \
 checkdf     -bg,intr,retrans=5,retry=3,timeo=11,proto=udp \
               archive7:/export/isdc_run/log/&
 cons_dr     -bg,intr,retrans=5,retry=3,timeo=11,proto=udp \
-              consdr:/export/disk_isdc_ops_central/isdc/run/log/&
+              cons:/export/isdc/run/log/&
 cons_pp     -bg,intr,retrans=5,retry=3,timeo=11,proto=udp \
-              consdr:/export/disk_isdc_ops_central/isdc/run/log/&
+              cons:/export/isdc/run/log/&
 cp_nrt_data -bg,intr,retrans=5,retry=3,timeo=11,proto=udp \
               archive7:/export/isdc_run/log/&
 data_rights -bg,intr,retrans=5,retry=3,timeo=11,proto=udp \
