@@ -38,9 +38,9 @@
 ###############################################################################
 
 cons_dr     -bg,intr,retrans=5,retry=3,timeo=11,proto=udp \
-              cons:/export/isdc/run/work/&
+              cons.integral.ops:/export/isdc/run/work/&
 cons_pp     -bg,intr,retrans=5,retry=3,timeo=11,proto=udp \
-              cons:/export/isdc/run/work/&
+              cons.integral.ops:/export/isdc/run/work/&
 ibas        -bg,intr,noac,retrans=5,retry=3,timeo=11,proto=udp \
               ibas:/export/disk_isdc_ops_central/isdc/run/work/&
 nrt_dr      -bg,intr,retrans=5,retry=3,timeo=11,proto=udp \

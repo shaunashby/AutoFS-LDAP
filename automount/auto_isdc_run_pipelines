@@ -26,6 +26,6 @@ adp         -bg,intr,retrans=5,retry=3,timeo=11,proto=udp \
 arc         -bg,intr,retrans=5,retry=3,timeo=11,proto=udp \
               archive7:/export/isdc_run/pipelines/&
 cons        -bg,intr,retrans=5,retry=3,timeo=11,proto=udp \
-              archive7:/export/isdc_run/pipelines/&
+              cons.integral.ops:/export/isdc/run/pipelines/&
 nrt         -bg,intr,retrans=5,retry=3,timeo=11,proto=udp \
               alert2:/export/isdc/run/pipelines/&
