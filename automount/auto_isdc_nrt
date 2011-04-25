@@ -25,3 +25,7 @@ pck_1		-rw,nosuid,hard,intr,bg,retry=1,timeo=11,proto=udp    nrtdr:/export/isdc/
 ops_for_rttmd	-rw,nosuid,hard,intr,bg,retry=1,timeo=11,proto=udp    nrtdr:/export/isdc/nrt/&
 #
 ops_1 	        -rw,nosuid,hard,intr,bg,retry=1,timeo=11,proto=udp    archive3:/export/nrtraid/isdc/nrt/&
+
+# Mountpoints to interface with the new operations setup:
+pck		-rw,nosuid,hard,intr,bg,retry=1,timeo=11,proto=udp    nrt.integral.ops:/export/isdc/nrt/&
+ops 	        -rw,nosuid,hard,intr,bg,retry=1,timeo=11,proto=udp    nrt.integral.ops:/export/isdc/nrt/& 

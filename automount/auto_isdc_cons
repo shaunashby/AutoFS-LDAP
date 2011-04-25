@@ -16,3 +16,7 @@ tst_gsit_2     -rw,nosuid,hard,intr,bg,retry=1,timeo=11,proto=udp    archive7:/e
 tst_e2e_e_1    -rw,nosuid,hard,intr,bg,retry=1,timeo=11,proto=udp    archive7:/export/cons/&
 ops_1 	       -rw,nosuid,hard,intr,bg,retry=1,timeo=11,proto=udp    archive7:/export/cons/&
 ops_sa 	       -rw,nosuid,hard,intr,bg,retry=1,timeo=11,proto=udp    archive7:/export/cons/&
+#
+# New mountpoints for new CONS machine:
+pck 	       -rw,nosuid,hard,intr,bg,retry=1,timeo=11,proto=udp    cons.integral.ops:/export/isdc/cons/&
+ops 	       -rw,nosuid,hard,intr,bg,retry=1,timeo=11,proto=udp    cons.integral.ops:/export/isdc/cons/&
