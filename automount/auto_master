@@ -46,6 +46,7 @@
 /isdc_run/pipelines  auto_isdc_run_pipelines
 /isdc_run/trigger    auto_isdc_run_trigger
 /isdc_run/work       auto_isdc_run_work
+/isdc_run/migration  auto_isdc_run_migration
 #
 # End of repositories need for ISDC software
 #
