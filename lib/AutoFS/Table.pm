@@ -21,6 +21,8 @@ our $VERSION = '0.1';
 use AutoFS::Config qw(:all);
 use AutoFS::Table::Entry;
 
+use overload qw{""} => \&as_text;
+
 sub new() {
 	my $proto = shift;
 	my $class = ref($proto) || $proto;
@@ -62,6 +64,11 @@ sub mountpoint() { return shift->{mountpoint} };
 sub key() { return shift->{key} };
 
 sub table() { return shift->{table} };
+
+sub as_text() {
+	my $self = shift;
+	return sprintf("%-30s\t%-55s\n", $self->{mountpoint}, $self->{key});	
+}
 
 1;
 __END__
