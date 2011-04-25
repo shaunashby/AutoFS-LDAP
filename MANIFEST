@@ -64,6 +64,7 @@ automount/auto_isdc_run_log
 automount/auto_isdc_run_pipelines
 automount/auto_isdc_run_trigger
 automount/auto_isdc_run_work
+automount/auto_isdc_run_migration
 automount/auto_isdc_sw
 automount/auto_isdc_testdata
 automount/auto_local
