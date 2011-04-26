@@ -29,6 +29,8 @@ dubath          -bg,retrans=2,retry=1,timeo=11,proto=udp      isdcops2:/export/h
 ops_ssa         -bg,retrans=2,retry=1,timeo=11,proto=udp      isdcops2:/export/home/&
 ops_dd          -bg,retrans=2,retry=1,timeo=11,proto=udp      isdcops2:/export/home/&
 paltani         -bg,retrans=2,retry=1,timeo=11,proto=udp      isdcops2:/export/home/&
+ops_ibas        -bg,retrans=2,retry=1,timeo=11,proto=udp      isdcops2:/export/home/&
+ops_nrt         -bg,retrans=2,retry=1,timeo=11,proto=udp      isdcops2:/export/home/&
 pkretsch        -bg,retrans=2,retry=1,timeo=11,proto=udp      isdcops2:/export/home/&
 pottschm        -bg,retrans=2,retry=1,timeo=11,proto=udp      isdcops2:/export/home/&
 produit         -bg,retrans=2,retry=1,timeo=11,proto=udp      isdcops2:/export/home/&
@@ -52,6 +54,3 @@ iftsops         -bg,retrans=2,retry=1,timeo=11,proto=udp      isdcifts:/export/d
 ops_adp         -bg,retrans=2,retry=1,timeo=11,proto=udp      isdcifts:/export/diskB2/home/&
 #
 ops_egse        -bg,retrans=2,retry=1,timeo=11,proto=udp      isdcops:/export/diskA2/home/&
-ops_ibas        -bg,retrans=2,retry=1,timeo=11,proto=udp      ibas:/export/diskA2/home/&
-#
-ops_nrt         -bg,retrans=2,retry=1,timeo=11,proto=udp      nrtdr:/export/home/&
