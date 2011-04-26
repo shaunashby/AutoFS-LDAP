@@ -59,7 +59,7 @@ ingest      -bg,intr,retrans=5,retry=3,timeo=11,proto=udp \
 metadata    -bg,intr,retrans=5,retry=3,timeo=11,proto=udp \
               archive4:/export/disk_isdc_ops_central/isdc/run/log/&
 nrt_dr      -bg,intr,retrans=5,retry=3,timeo=11,proto=udp \
-              nrtdr:/export/isdc/nrt/run/log/&
+              nrt.integral.ops:/export/isdc/run/log/&
 nrt_input   -bg,intr,retrans=5,retry=3,timeo=11,proto=udp \
               alert2:/export/isdc/run/log/&
 nrt_pp      -bg,intr,retrans=5,retry=3,timeo=11,proto=udp \

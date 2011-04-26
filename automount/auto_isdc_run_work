@@ -44,7 +44,7 @@ cons_pp     -bg,intr,retrans=5,retry=3,timeo=11,proto=udp \
 ibas        -bg,intr,noac,retrans=5,retry=3,timeo=11,proto=udp \
               ibas:/export/disk_isdc_ops_central/isdc/run/work/&
 nrt_dr      -bg,intr,retrans=5,retry=3,timeo=11,proto=udp \
-              nrtdr:/export/isdc/nrt/run/work/&
+              nrt.integral.ops:/export/isdc/run/work/&
 nrt_iqla    -bg,intr,retrans=5,retry=3,timeo=11,proto=udp \
       	      archive7:/export/isdc_run/work/&
 nrt_pp      -bg,intr,retrans=5,retry=3,timeo=11,proto=udp \

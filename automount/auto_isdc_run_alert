@@ -75,7 +75,7 @@ metadata    -bg,intr,retrans=5,retry=3,timeo=11,proto=udp \
 nrt         -bg,intr,retrans=5,retry=3,timeo=11,proto=udp \
               alert2:/export/isdc/run/alert/&
 nrt_dr      -bg,intr,retrans=5,retry=3,timeo=11,proto=udp \
-              nrtdr:/export/isdc/nrt/run/alert/&
+              nrt.integral.ops:/export/isdc/nrt/run/alert/&
 nrt_pp      -bg,intr,retrans=5,retry=3,timeo=11,proto=udp \
               alert2:/export/isdc/run/alert/&
 nrt_qla     -bg,intr,retrans=5,retry=3,timeo=11,proto=udp \

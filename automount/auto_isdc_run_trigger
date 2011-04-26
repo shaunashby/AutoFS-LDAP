@@ -38,7 +38,7 @@ ingest_scw  -bg,intr,retrans=5,retry=3,timeo=11,proto=udp \
 metadata    -bg,intr,retrans=5,retry=3,timeo=11,proto=udp \
               archive7:/export/isdc_run/trigger/&
 nrt_dr      -bg,intr,retrans=5,retry=3,timeo=11,proto=udp \
-              nrtdr:/export/isdc/nrt/run/trigger/&
+              nrt.integral.ops:/export/isdc/nrt/run/trigger/&
 nrt_qla     -bg,intr,retrans=5,retry=3,timeo=11,proto=udp \
               archive7:/export/isdc_run/trigger/&
 nrt_rev     -bg,intr,retrans=5,retry=3,timeo=11,proto=udp \
