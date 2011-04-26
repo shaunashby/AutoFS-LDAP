@@ -43,6 +43,12 @@ sub name() { return shift->{master} }
 
 sub tables() { return shift->{tables} }
 
+sub getTable() { 
+	my ($self, $mountpoint) = @_;
+	my $table = [ grep { $_->mountpoint eq $mountpoint } @{ $self->tables } ];
+	($#$table == 0 && ref($table->[0]) eq "AutoFS::Table") ? return $table->[0] : return undef;
+}
+
 sub _read() {
 	my ($self,$master) = @_;
 	$self->{tables} = [];
