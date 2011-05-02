@@ -17,25 +17,25 @@ use warnings;
 use Path::Class::File;
 use Carp qw(croak);
 
+use base 'AutoFS::Map::Base';
+
 use AutoFS::Table;
 
 sub new() {
     my $proto = shift;
     my $class = ref($proto) || $proto;
-    my $self = (@_ == 0) ?           # Error if no params given
-	croak("No params given.\n")
-	: (ref($_[0]) eq 'HASH') ? $_[0] # Got hashref already - OK
-	: { @_ };                        # Otherwise, store the params in a hash
+    my $self = $class->SUPER::new(@_);
+
+    bless($self, $class);
 
     # Simple validation:
-    map { exists($self->{$_}) || croak "Must have attribute $_" } qw(map_name);
-    bless($self => $class);
-    
+    map { exists($self->{$_}) || croak "Must have attribute $_" } qw(map_name);    
     # Check that master table exists:
     croak sprintf("Unable to read master_map file %s",$self->{map_name}) unless (-f $self->{map_name});
     # Now read it:
-    my @master_map_entries = Path::Class::File->new($self->{map_name})->slurp( chomp => 1 );
-    $self->_read(\@master_map_entries);
+    push(@{$self->{content}}, Path::Class::File->new($self->{map_name})->slurp( chomp => 1 ) );
+    $self->_read();
+
     return $self;
 }
 
@@ -50,7 +50,7 @@ sub getTable() {
 }
 
 sub _read() {
-	my ($self,$master_map_entries) = @_;
+	my ($self) = @_;
 	$self->{tables} = [];
 	map {
 		if ($_ !~ /^#/ && $_ !~ m|^/net|) {
@@ -58,7 +58,7 @@ sub _read() {
 				push(@{$self->{tables}}, AutoFS::Table->new( { mountpoint => $mnt, key => $tab } ));
 			}
 		}
-	} @$master_map_entries;
+	} @{ $self->{content} };
 }
 
 1;
