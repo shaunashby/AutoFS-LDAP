@@ -22,15 +22,15 @@ my $master = AutoFS::Map::Master->new( { map_name => AUTOMOUNT_CONFIG_DIR.'/auto
 
 cmp_ok(ref($master),'eq','AutoFS::Map::Master');
 can_ok($master,"map_name");
-can_ok($master,"tables");
-can_ok($master,"getTable");
+can_ok($master,"maps");
+can_ok($master,"getMap");
 
-my $cons_table = $master->getTable('/cons');
-cmp_ok(ref($cons_table),'eq','AutoFS::Table');
-cmp_ok($cons_table->mountpoint,'eq','/cons');
+my $cons_map = $master->getMap('/cons');
+cmp_ok(ref($cons_map),'eq','AutoFS::Map');
+cmp_ok($cons_map->mountpoint,'eq','/cons');
 
-my $fail_table = $master->getTable('/carp');
-ok(!defined($fail_table),"Non-existent mount table.");
+my $fail_map = $master->getMap('/carp');
+ok(!defined($fail_map),"Non-existent mount table.");
 
-my $tables = $master->tables;
-isa_ok($tables,'ARRAY');
+my $maps = $master->maps;
+isa_ok($maps,'ARRAY');

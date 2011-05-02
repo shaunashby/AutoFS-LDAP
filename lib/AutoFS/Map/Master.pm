@@ -19,7 +19,7 @@ use Carp qw(croak);
 
 use base 'AutoFS::Map::Base';
 
-use AutoFS::Table;
+use AutoFS::Map;
 
 sub new() {
     my $proto = shift;
@@ -40,22 +40,22 @@ sub new() {
 
 sub map_name() { return shift->{map_name} }
 
-sub tables() { return shift->{tables} }
+sub maps() { return shift->{maps} }
 
-sub getTable() { 
+sub getMap() { 
     my ($self, $mountpoint) = @_;
-    my $table = [ grep { $_->mountpoint eq $mountpoint } @{ $self->tables } ];
-    ($#$table == 0 && ref($table->[0]) eq "AutoFS::Table") ? return $table->[0] : return undef;
+    my $map = [ grep { $_->mountpoint eq $mountpoint } @{ $self->maps } ];
+    ($#$map == 0 && ref($map->[0]) eq "AutoFS::Map") ? return $map->[0] : return undef;
 }
 
 sub _read() {
     my ($self,$file) = @_;
-    $self->{tables} = [];
+    $self->{maps} = [];
     $self->SUPER::_read($file);
     map {
 	if ($_ !~ /^#/ && $_ !~ m|^/net|) {
 	    if (my ($mnt,$tab) = ($_ =~ m|(^/.*[^\s])\s+(.*?)$|g)) {
-		push(@{$self->{tables}}, AutoFS::Table->new( { mountpoint => $mnt, key => $tab } ));
+		push(@{$self->{maps}}, AutoFS::Map->new( { mountpoint => $mnt, key => $tab } ));
 	    }
 	}
     } @{ $self->{content} };
