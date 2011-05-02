@@ -18,7 +18,6 @@ use Carp qw(croak);
 
 use base 'AutoFS::Map::Base';
 
-use AutoFS::Config qw(:all);
 use AutoFS::Table::Entry;
 
 use overload qw{""} => \&as_text;
@@ -29,48 +28,47 @@ sub new() {
     my $self = $class->SUPER::new(@_);
 
     bless($self, $class);
-
+    
     # Simple validation:
-    map { exists($self->{$_}) || croak "Must have attribute $_" } qw(mountpoint key);
-    # Set the automount table name for this key:
-    $self->{map_file} = AUTOMOUNT_CONFIG_DIR.'/'.$self->{key};
-    # Check that the automount table exists :
-    croak sprintf("Unable to read automount map file %s",$self->{map}) unless (-f $self->{map_file});
-
+    map { exists($self->{$_}) || croak "Must have attribute $_" } qw(mountpoint map_name);
     # Now read it:
-    $self->_read( $self->{map_file} );
+    $self->_read( $self->{map_name} );
 
     return $self;
 }
 
 sub _read() {
-    my ($self,$file) = @_;
+    my ($self,$map_name) = @_;
     $self->{entries} = [];
-    $self->SUPER::_read($file);
+    $self->SUPER::_read($map_name);
 
     map {
 	if ($_ !~ /^#/) {
-	    if (my ($mount, $opts, $info) = ($_ =~ m|([a-zA-Z0-9_]*)\s+([a-zA-Z0-9-_=,]*)\s+([a-zA-Z0-9:&/]*)|g)) {
-		push(@{$self->{entries}}, AutoFS::Table::Entry->new( { mountpoint => $mount, options => $opts, info => $info } ));
+	    if (my ($key, $opts, $location) = ($_ =~ m|([a-zA-Z0-9_]*)\s+([a-zA-Z0-9-_=,]*)\s+([a-zA-Z0-9:&/]*)|g)) {
+		push(@{$self->{entries}}, AutoFS::Table::Entry->new(
+			 {
+			     key => $key,
+			     options => $opts,
+			     location => $location,
+			     mountpoint => $self->{mountpoint}."/$key"
+			 }
+		     ));
 	    }
 	}
     } @{ $self->{content} };
 }
 
+sub mountpoint() { return shift->{mountpoint} };
+
 sub type() { return shift->{type} || 'indirect' }
 
 sub entries() { return shift->{entries} || [] }
 
-sub mountpoint() { return shift->{mountpoint} };
-
-sub key() { return shift->{key} };
-
-sub table() { return shift->{table} };
-
 sub as_text() {
 	my $self = shift;
-	return sprintf("%-30s\t%-55s\n", $self->{mountpoint}, $self->{key});	
+	return sprintf("%-30s\t%-55s\n", $self->{mountpoint}, $self->{map_name});	
 }
 
 1;
+
 __END__

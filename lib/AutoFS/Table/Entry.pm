@@ -27,17 +27,20 @@ sub new() {
 	: { @_ };                        # Otherwise, store the params in a hash
 	
 	# Simple validation:
-	map { exists($self->{$_}) || croak "Must have attribute $_" } qw(mountpoint options info);
+	map { exists($self->{$_}) || croak "Must have attribute $_" } qw(key options location mountpoint);
 	bless($self => $class);
 
 	return $self;
 }
 
-sub mountpoint() { return shift->{mountpoint} }
+sub key() { return shift->{key} }
 
 sub options() { return shift->{options} }
 
-sub info() { return shift->{info} }
+sub location() { return shift->{location} }
+
+sub mountpoint() { return shift->{mountpoint} }
 
 1;
+
 __END__
