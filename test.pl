@@ -19,5 +19,6 @@ print $output,"\n";
 __DATA__
 [% FOR entry IN map.entries -%]
 automountKey=[% entry.mountpoint %]
-automountInformation=[% entry.info %]
+automountOpts=[% entry.options %]
+automountInformation=[% entry.location %]
 [% END -%]
