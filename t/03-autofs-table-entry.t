@@ -2,16 +2,16 @@
 use strict;
 use warnings;
 
-use Test::More tests => 4;
+use Test::More tests => 5;
 
 use AutoFS::Map::Master;
-use AutoFS::Config qw(:all);
 
-my $master = AutoFS::Map::Master->new( { map_name => AUTOMOUNT_CONFIG_DIR.'/auto_master' });
+my $master = AutoFS::Map::Master->new( { map_name => 'auto_master' });
 my $map = $master->maps->[0];
 my $entry = $map->entries->[0];
 
 cmp_ok(ref($entry),'eq','AutoFS::Table::Entry');
-can_ok($entry,"mountpoint");
+can_ok($entry,"key");
 can_ok($entry,"options");
-can_ok($entry,"info");
+can_ok($entry,"location");
+can_ok($entry,"mountpoint");
