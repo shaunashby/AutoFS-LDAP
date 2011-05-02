@@ -7,8 +7,7 @@ lib/AutoFS/LDAP.pm
 lib/AutoFS/Map/Base.pm
 lib/AutoFS/Map/Master.pm
 lib/AutoFS/Map.pm
-lib/AutoFS/Table.pm
-lib/AutoFS/Table/Entry.pm
+lib/AutoFS/Map/Entry.pm
 t/00-load.t
 t/01-autofs-master.t
 t/02-autofs-table.t

@@ -9,7 +9,7 @@
 # Copyright: 2011 (C) Shaun Ashby
 #
 #--------------------------------------------------------------------
-package AutoFS::Table::Entry;
+package AutoFS::Map::Entry;
 
 use strict;
 use warnings;
