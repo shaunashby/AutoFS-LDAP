@@ -33,8 +33,7 @@ sub new() {
     # Check that master table exists:
     croak sprintf("Unable to read master_map file %s",$self->{map_name}) unless (-f $self->{map_name});
     # Now read it:
-    push(@{$self->{content}}, Path::Class::File->new($self->{map_name})->slurp( chomp => 1 ) );
-    $self->_read();
+    $self->_read( $self->{map_name} );
 
     return $self;
 }
@@ -44,21 +43,22 @@ sub map_name() { return shift->{map_name} }
 sub tables() { return shift->{tables} }
 
 sub getTable() { 
-	my ($self, $mountpoint) = @_;
-	my $table = [ grep { $_->mountpoint eq $mountpoint } @{ $self->tables } ];
-	($#$table == 0 && ref($table->[0]) eq "AutoFS::Table") ? return $table->[0] : return undef;
+    my ($self, $mountpoint) = @_;
+    my $table = [ grep { $_->mountpoint eq $mountpoint } @{ $self->tables } ];
+    ($#$table == 0 && ref($table->[0]) eq "AutoFS::Table") ? return $table->[0] : return undef;
 }
 
 sub _read() {
-	my ($self) = @_;
-	$self->{tables} = [];
-	map {
-		if ($_ !~ /^#/ && $_ !~ m|^/net|) {
-			if (my ($mnt,$tab) = ($_ =~ m|(^/.*[^\s])\s+(.*?)$|g)) {
-				push(@{$self->{tables}}, AutoFS::Table->new( { mountpoint => $mnt, key => $tab } ));
-			}
-		}
-	} @{ $self->{content} };
+    my ($self,$file) = @_;
+    $self->{tables} = [];
+    $self->SUPER::_read($file);
+    map {
+	if ($_ !~ /^#/ && $_ !~ m|^/net|) {
+	    if (my ($mnt,$tab) = ($_ =~ m|(^/.*[^\s])\s+(.*?)$|g)) {
+		push(@{$self->{tables}}, AutoFS::Table->new( { mountpoint => $mnt, key => $tab } ));
+	    }
+	}
+    } @{ $self->{content} };
 }
 
 1;

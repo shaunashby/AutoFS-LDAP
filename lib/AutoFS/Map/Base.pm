@@ -39,13 +39,17 @@ sub new() {
     my $self = (@_ == 0) ?           # Error if no params given
 	croak("No params given.\n")
 	: (ref($_[0]) eq 'HASH') ? $_[0] # Got hashref already - OK
-	: { @_ };                        # Otherwise, store the params in a hash
+	: { @_ };                   # Otherwise, store the params in a hash
 
     $self->{content} = [];
     bless($self => $class);
     return $self;
 }
 
+sub _read() {
+    my ($self,$file) = @_;
+    push(@{ $self->{content} }, Path::Class::File->new($file)->slurp( chomp => 1 ) );
+}
 
 1;
 
