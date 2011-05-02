@@ -57,6 +57,8 @@ sub _read() {
 	} @$entries;
 }
 
+sub type() { return shift->{type} || 'indirect' }
+
 sub entries() { return shift->{entries} || [] }
 
 sub mountpoint() { return shift->{mountpoint} };
