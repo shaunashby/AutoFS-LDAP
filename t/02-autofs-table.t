@@ -7,7 +7,7 @@ use Test::More tests => 4;
 use AutoFS::Master;
 use AutoFS::Config qw(:all);
 
-my $master = AutoFS::Master->new( { master => AUTOMOUNT_CONFIG_DIR.'/auto_master' });
+my $master = AutoFS::Master->new( { master_map => AUTOMOUNT_CONFIG_DIR.'/auto_master' });
 my $tables = $master->tables;
 my $entry = $tables->[0];
 

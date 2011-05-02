@@ -18,10 +18,10 @@ use Test::More tests => 8;
 use AutoFS::Master;
 use AutoFS::Config qw(:all);
 
-my $master = AutoFS::Master->new( { master => AUTOMOUNT_CONFIG_DIR.'/auto_master' });
+my $master = AutoFS::Master->new( { master_map => AUTOMOUNT_CONFIG_DIR.'/auto_master' });
 
 cmp_ok(ref($master),'eq','AutoFS::Master');
-can_ok($master,"name");
+can_ok($master,"map_name");
 can_ok($master,"tables");
 can_ok($master,"getTable");
 

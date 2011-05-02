@@ -8,7 +8,7 @@ use AutoFS::Master;
 use AutoFS::Config qw(:all);
 
 my ($template, $output);
-my $master = AutoFS::Master->new( { master => AUTOMOUNT_CONFIG_DIR . '/auto_master' } );
+my $master = AutoFS::Master->new( { master_map => AUTOMOUNT_CONFIG_DIR . '/auto_master' } );
 
 my $table = $master->getTable('/cons');
 

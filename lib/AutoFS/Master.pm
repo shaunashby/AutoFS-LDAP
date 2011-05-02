@@ -28,18 +28,18 @@ sub new() {
 	: { @_ };                        # Otherwise, store the params in a hash
 
     # Simple validation:
-    map { exists($self->{$_}) || croak "Must have attribute $_" } qw(master);
+    map { exists($self->{$_}) || croak "Must have attribute $_" } qw(master_map);
     bless($self => $class);
     
     # Check that master table exists:
-    croak sprintf("Unable to read master table %s",$self->{master}) unless (-f $self->{master});
+    croak sprintf("Unable to read master_map file %s",$self->{master_map}) unless (-f $self->{master_map});
     # Now read it:
-    my @master = Path::Class::File->new($self->{master})->slurp( chomp => 1 );
-    $self->_read(\@master);
+    my @masterMap = Path::Class::File->new($self->{master_map})->slurp( chomp => 1 );
+    $self->_read(\@masterMap);
     return $self;
 }
 
-sub name() { return shift->{master} }
+sub map_name() { return shift->{master_map} }
 
 sub tables() { return shift->{tables} }
 
@@ -50,7 +50,7 @@ sub getTable() {
 }
 
 sub _read() {
-	my ($self,$master) = @_;
+	my ($self,$master_map) = @_;
 	$self->{tables} = [];
 	map {
 		if ($_ !~ /^#/ && $_ !~ m|^/net|) {
@@ -58,7 +58,7 @@ sub _read() {
 				push(@{$self->{tables}}, AutoFS::Table->new( { mountpoint => $mnt, key => $tab } ));
 			}
 		}
-	} @$master;
+	} @$master_map;
 }
 
 1;
