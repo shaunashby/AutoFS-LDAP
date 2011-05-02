@@ -4,11 +4,11 @@ use strict;
 use warnings;
 use Template;
 
-use AutoFS::Master;
+use AutoFS::Map::Master;
 use AutoFS::Config qw(:all);
 
 my ($template, $output);
-my $master = AutoFS::Master->new( { master_map => AUTOMOUNT_CONFIG_DIR . '/auto_master' } );
+my $master = AutoFS::Map::Master->new( { map_name => AUTOMOUNT_CONFIG_DIR . '/auto_master' } );
 
 my $table = $master->getTable('/cons');
 

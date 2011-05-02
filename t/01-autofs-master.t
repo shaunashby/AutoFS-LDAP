@@ -15,12 +15,12 @@ use warnings;
 
 use Test::More tests => 8;
 
-use AutoFS::Master;
+use AutoFS::Map::Master;
 use AutoFS::Config qw(:all);
 
-my $master = AutoFS::Master->new( { master_map => AUTOMOUNT_CONFIG_DIR.'/auto_master' });
+my $master = AutoFS::Map::Master->new( { map_name => AUTOMOUNT_CONFIG_DIR.'/auto_master' });
 
-cmp_ok(ref($master),'eq','AutoFS::Master');
+cmp_ok(ref($master),'eq','AutoFS::Map::Master');
 can_ok($master,"map_name");
 can_ok($master,"tables");
 can_ok($master,"getTable");
