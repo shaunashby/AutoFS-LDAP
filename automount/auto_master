@@ -1,44 +1,4 @@
-###############################################################################
-#
-#   File:      /etc/operations/automount/auto_master
-#   Version:   1.1
-#
-#   Author(s): Alain.Aubord@obs.unige.ch (AA)
-#              Jerzy.Borkowski@obs.unige.ch (JB)
-#              Mathias.Beck@obs.unige.ch (MB)
-#
-#   Purpose:   Auto_master table for the operation network.
-#
-#   Revision History:
-#
-#      1.1      11-Jan-2002   MB   removed /alert /log /trigger /pipelines
-#
-#      1.0.1:   31-Oct-2001   MB   removed /isdc_run/ingest after discussion
-#                                  with PBI. This directory is obsolete.
-#
-#      1.0:     31-Oct-2001   MB   versioning and tracking of changes started
-#
-###############################################################################
-#
-# 
-#To access easily every unsaved area
-/net            -hosts          -nosuid,nobrowse
-#Home directories
 /home	auto_home
-#/usr/local directories
-/usr/local	auto_local
-#Reference Software 
-/reference	auto_reference
-/refsoftware	auto_refsoftware
-#This is only for egcc which cannot be at the same location
-#than gcc
-/egcc	auto_egcc
-#
-# Repositories needed for ISDC software (compiling/running)
-# 
-# Contact Mathias.Beck@obs.unige.ch in case of problems
-#
-/isdc_sw             auto_isdc_sw
 /isdc_data           auto_isdc_data
 /isdc_run/alert      auto_isdc_run_alert
 /isdc_run/ifts       auto_isdc_run_ifts
@@ -47,18 +7,10 @@
 /isdc_run/trigger    auto_isdc_run_trigger
 /isdc_run/work       auto_isdc_run_work
 /isdc_run/migration  auto_isdc_run_migration
-#
-# End of repositories need for ISDC software
-#
-#various automounted partition
 /divers auto_divers
-#work area for reprocessing
 /reproc auto_reproc
 /nrt			auto_isdc_nrt
 /cons			auto_isdc_cons
-#
-#Table for the "/isdc/arc" directory
-#
 /isdc/arc/rev_1/idx	auto_isdc_arc_rev_1_idx
 /isdc/arc/rev_1/ic	auto_isdc_arc_rev_1_ic
 /isdc/arc/rev_1/cat	auto_isdc_arc_rev_1_cat
@@ -66,7 +18,7 @@
 /isdc/arc/rev_1/obs	auto_isdc_arc_rev_1_obs
 /isdc/arc/rev_1/aux	auto_isdc_arc_rev_1_aux
 /isdc/arc/rev_2/idx     auto_isdc_arc_rev_2_idx
-/isdc/arc/rev_2/ic      auto_isdc_arc_rev_1_ic
+/isdc/arc/rev_2/ic      auto_isdc_arc_rev_2_ic
 /isdc/arc/rev_2/obs_isgri      auto_isdc_arc_rev_2_obs_isgri
 /isdc/arc/rev_2/obs_isgri_osa_7v0      auto_isdc_arc_rev_2_obs_isgri_osa_7v0
 /isdc/arc/rev_2/obs_picsit      auto_isdc_arc_rev_2_obs_picsit
@@ -74,7 +26,7 @@
 /isdc/arc/rev_2/obs_jmx_osa_7v0      auto_isdc_arc_rev_2_obs_jmx_osa_7v0
 /isdc/arc/rev_2/obs_omc      auto_isdc_arc_rev_2_obs_omc
 /isdc/arc/rev_2/obs_spi      auto_isdc_arc_rev_2_obs_spi
-/isdc/arc/rev_2/cat     auto_isdc_arc_rev_1_cat
+/isdc/arc/rev_2/cat     auto_isdc_arc_rev_2_cat
 /isdc/arc/rev_2/scw     auto_isdc_arc_rev_2_scw
 /isdc/arc/rev_2/obs     auto_isdc_arc_rev_2_obs
 /isdc/arc/rev_2/aux     auto_isdc_arc_rev_2_aux

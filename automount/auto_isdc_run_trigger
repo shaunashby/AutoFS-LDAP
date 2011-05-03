@@ -19,29 +19,16 @@
 #
 ###############################################################################
 
-adp         -bg,intr,retrans=5,retry=3,timeo=11,proto=udp \
-              isdcifts:/export/disk_isdc_ops_central/isdc/run/trigger/&
-cons_dr     -bg,intr,retrans=5,retry=3,timeo=11,proto=udp \
-              archive7:/export/isdc_run/trigger/&
-cons_rev    -bg,intr,retrans=5,retry=3,timeo=11,proto=udp \
-              archive7:/export/isdc_run/trigger/&
-cons_scw    -bg,intr,retrans=5,retry=3,timeo=11,proto=udp \
-              archive7:/export/isdc_run/trigger/&
-cons_sa     -bg,intr,retrans=5,retry=3,timeo=11,proto=udp \
-              archive7:/export/isdc_run/trigger/&
-ingest      -bg,intr,retrans=5,retry=3,timeo=11,proto=udp \
-              archive7:/export/isdc_run/trigger/&
-ingest_obs  -bg,intr,retrans=5,retry=3,timeo=11,proto=udp \
-              archive7:/export/isdc_run/trigger/&
-ingest_scw  -bg,intr,retrans=5,retry=3,timeo=11,proto=udp \
-              archive7:/export/isdc_run/trigger/&
-metadata    -bg,intr,retrans=5,retry=3,timeo=11,proto=udp \
-              archive7:/export/isdc_run/trigger/&
-nrt_dr      -bg,intr,retrans=5,retry=3,timeo=11,proto=udp \
-              nrt.integral.ops:/export/isdc/nrt/run/trigger/&
-nrt_qla     -bg,intr,retrans=5,retry=3,timeo=11,proto=udp \
-              archive7:/export/isdc_run/trigger/&
-nrt_rev     -bg,intr,retrans=5,retry=3,timeo=11,proto=udp \
-              archive7:/export/isdc_run/trigger/&
-nrt_scw     -bg,intr,retrans=5,retry=3,timeo=11,proto=udp \
-              archive7:/export/isdc_run/trigger/&
+adp         -bg,intr,retrans=5,retry=3,timeo=11,proto=udp   isdcifts:/export/disk_isdc_ops_central/isdc/run/trigger/&
+cons_dr     -bg,intr,retrans=5,retry=3,timeo=11,proto=udp   archive7:/export/isdc_run/trigger/&
+cons_rev    -bg,intr,retrans=5,retry=3,timeo=11,proto=udp   archive7:/export/isdc_run/trigger/&
+cons_scw    -bg,intr,retrans=5,retry=3,timeo=11,proto=udp   archive7:/export/isdc_run/trigger/&
+cons_sa     -bg,intr,retrans=5,retry=3,timeo=11,proto=udp   archive7:/export/isdc_run/trigger/&
+ingest      -bg,intr,retrans=5,retry=3,timeo=11,proto=udp   archive7:/export/isdc_run/trigger/&
+ingest_obs  -bg,intr,retrans=5,retry=3,timeo=11,proto=udp   archive7:/export/isdc_run/trigger/&
+ingest_scw  -bg,intr,retrans=5,retry=3,timeo=11,proto=udp   archive7:/export/isdc_run/trigger/&
+metadata    -bg,intr,retrans=5,retry=3,timeo=11,proto=udp   archive7:/export/isdc_run/trigger/&
+nrt_dr      -bg,intr,retrans=5,retry=3,timeo=11,proto=udp   nrt:/export/isdc/nrt/run/trigger/&
+nrt_qla     -bg,intr,retrans=5,retry=3,timeo=11,proto=udp   archive7:/export/isdc_run/trigger/&
+nrt_rev     -bg,intr,retrans=5,retry=3,timeo=11,proto=udp   archive7:/export/isdc_run/trigger/&
+nrt_scw     -bg,intr,retrans=5,retry=3,timeo=11,proto=udp   archive7:/export/isdc_run/trigger/&

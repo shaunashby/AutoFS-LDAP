@@ -21,11 +21,7 @@
 #
 ###############################################################################
 
-adp         -bg,intr,retrans=5,retry=3,timeo=11,proto=udp \
-              isdcifts:/export/disk_isdc_ops_central/isdc/run/pipelines/&
-arc         -bg,intr,retrans=5,retry=3,timeo=11,proto=udp \
-              archive7:/export/isdc_run/pipelines/&
-cons        -bg,intr,retrans=5,retry=3,timeo=11,proto=udp \
-              cons.integral.ops:/export/isdc/run/pipelines/&
-nrt         -bg,intr,retrans=5,retry=3,timeo=11,proto=udp \
-              alert2:/export/isdc/run/pipelines/&
+adp         -bg,intr,retrans=5,retry=3,timeo=11,proto=udp isdcifts:/export/disk_isdc_ops_central/isdc/run/pipelines/&
+arc         -bg,intr,retrans=5,retry=3,timeo=11,proto=udp archive7:/export/isdc_run/pipelines/&
+cons        -bg,intr,retrans=5,retry=3,timeo=11,proto=udp cons.integral.ops:/export/isdc/run/pipelines/&
+nrt         -bg,intr,retrans=5,retry=3,timeo=11,proto=udp alert2:/export/isdc/run/pipelines/&

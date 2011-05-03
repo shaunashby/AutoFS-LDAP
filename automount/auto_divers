@@ -1,28 +1,11 @@
-#
-# 10-Jan-2004  DR   moved ARCHIVE3-GE0 to ARCHIVE3
-#
-# 09-Aug-2004  MB   removed isdc_rp_{cons,run,sw} as those are now /reproc/{cons,run,sw} from auto_reproc
-#
-# 04-Jun-2004  MB   added isdc_rp_{cons,run,sw}
-#
-# 11-Jan-2002  MB   clean-up
-#
-# 19-Dec-2001  MB   renamed test to tst and relocted its location to
-#                   ARCHIVE3. When the ops-network was re-configured by AA
-#                   this repository was missed.
-#
-#Some directories for Operations network
-#The mount parameters are tuned to minimize the effect of a non
-#responding server. The goal is to have minimal delay
-#when a server is not responding. 
 testdata -bg,rw,retrans=3,intr,retrans=2,retry=3,timeo=3,proto=udp archive7:/export/divers/&
-tst -bg,intr,retrans=2,retry=3,timeo=3,proto=udp       archive7:/export/divers/&
-release 							archive6:/export/divers/&
-system -bg,intr,retrans=2,retry=3,timeo=3,proto=udp		archive7:/export/divers/&
-nrt -bg,intr,retrans=2,retry=3,timeo=3,proto=udp		nrtdr:/export/isdc/&
-scratch   -bg,intr,retrans=2,retry=3,timeo=3,proto=udp      archive3:/export/diskB1/&
-ifts	-bg,intr,retrans=2,retry=3,timeo=3,proto=udp	isdcifts:/export/diskB2/divers/&
-arc-links	-bg,intr,ro,soft,retrans=3,retrans=2,retry=3,timeo=3,proto=udp	archive6:/export/divers/&
+tst      -bg,intr,retrans=2,retry=3,timeo=3,proto=udp     archive7:/export/divers/&
+release 						  archive6:/export/divers/&
+system   -bg,intr,retrans=2,retry=3,timeo=3,proto=udp     archive7:/export/divers/&
+nrt      -bg,intr,retrans=2,retry=3,timeo=3,proto=udp     nrt:/export/isdc/&
+scratch  -bg,intr,retrans=2,retry=3,timeo=3,proto=udp     archive3:/export/diskB1/&
+ifts	 -bg,intr,retrans=2,retry=3,timeo=3,proto=udp	  isdcifts:/export/diskB2/divers/&
+arc-links -bg,intr,ro,soft,retrans=3,retrans=2,retry=3,timeo=3,proto=udp	archive6:/export/divers/&
 scripts	-bg,intr,retrans=2,retry=3,timeo=3,proto=udp      archive7:/export/divers/&
 tmp_nrt	-bg,intr,retrans=2,retry=3,timeo=3,proto=udp      archive7:/export/divers/&
 pvphase	                                                  archive6:/export/isdc/pvphase

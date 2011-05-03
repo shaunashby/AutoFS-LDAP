@@ -1,4 +1,3 @@
-version: 1
 
 dn: ou=autofs,ou=Services,dc=integral,dc=ops
 objectClass: top
@@ -15,6 +14,21 @@ objectClass: automount
 automountInformation: auto_data
 automountKey: /data
 
+dn: automountKey=/data/arc,automountMapName=auto_master,ou=autofs,ou=Services,dc=integral,dc=ops
+objectClass: automount
+automountInformation: auto_data_arc
+automountKey: /data/arc
+
+dn: automountKey=/isdc,automountMapName=auto_master,ou=autofs,ou=Services,dc=integral,dc=ops
+objectClass: automount
+automountInformation: auto_isdc
+automountKey: /isdc
+
+dn: automountKey=/home,automountMapName=auto_master,ou=autofs,ou=Services,dc=integral,dc=ops
+objectClass: automount
+automountInformation: auto_home
+automountKey: /home
+
 dn: automountMapName=auto_data,ou=autofs,ou=Services,dc=integral,dc=ops
 objectClass: top
 objectClass: automountMap
@@ -25,10 +39,21 @@ objectClass: automount
 automountInformation: -rw,hard,intr opsmgtp:/data/archive
 automountKey: archive
 
-dn: automountKey=/isdc,automountMapName=auto_master,ou=autofs,ou=Services,dc=integral,dc=ops
+dn: automountMapName=auto_data_arc,ou=autofs,ou=Services,dc=integral,dc=ops
+objectClass: top
+objectClass: automountMap
+automountMapName: auto_data_arc
+
+dn: automountKey=rev_2,automountMapName=auto_data_arc,ou=autofs,ou=Services,dc=integral,dc=ops
 objectClass: automount
-automountInformation: auto_isdc
-automountKey: /isdc
+automountInformation: -rw,hard,intr opsmgtp:/data/archive/arc/&
+automountKey: rev_2
+
+dn: automountKey=rev_3,automountMapName=auto_data_arc,ou=autofs,ou=Services,dc=integral,dc=ops
+objectClass: automount
+automountInformation: -rw,hard,intr opsmgtp:/data/archive/arc/&
+automountKey: rev_3
+
 
 dn: automountMapName=auto_isdc,ou=autofs,ou=Services,dc=integral,dc=ops
 objectClass: top
@@ -55,10 +80,6 @@ objectClass: automount
 automountInformation: localhost:/export/isdc/run
 automountKey: run
 
-dn: automountKey=/home,automountMapName=auto_master,ou=autofs,ou=Services,dc=integral,dc=ops
-objectClass: automount
-automountInformation: auto_home
-automountKey: /home
 
 dn: automountMapName=auto_home,ou=autofs,ou=Services,dc=integral,dc=ops
 objectClass: top
@@ -70,23 +91,5 @@ objectClass: automount
 automountInformation: -rw,hard,intr isdcops2:/export/home/&
 automountKey: *
 
-dn: automountKey=/data/arc,automountMapName=auto_master,ou=autofs,ou=Services,dc=integral,dc=ops
-objectClass: automount
-automountInformation: auto_data_arc
-automountKey: /data/arc
 
-dn: automountMapName=auto_data_arc,ou=autofs,ou=Services,dc=integral,dc=ops
-objectClass: top
-objectClass: automountMap
-automountMapName: auto_data_arc
-
-dn: automountKey=rev_2,automountMapName=auto_data_arc,ou=autofs,ou=Services,dc=integral,dc=ops
-objectClass: automount
-automountInformation: -rw,hard,intr opsmgtp:/data/archive/arc/&
-automountKey: rev_2
-
-dn: automountKey=rev_3,automountMapName=auto_data_arc,ou=autofs,ou=Services,dc=integral,dc=ops
-objectClass: automount
-automountInformation: -rw,hard,intr opsmgtp:/data/archive/arc/&
-automountKey: rev_3
 

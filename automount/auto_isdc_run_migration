@@ -1,5 +1,2 @@
-# automount table for migration only:
-inbox       -bg,intr,retrans=5,retry=3,timeo=11,proto=udp \
-              nrt.integral.ops:/export/isdc/run/ifts/&
-inbox.tmp   -bg,intr,retrans=5,retry=3,timeo=11,proto=udp \
-              nrt.integral.ops:/export/isdc/run/ifts/&
+inbox       -bg,intr,retrans=5,retry=3,timeo=11,proto=udp nrt:/export/isdc/run/ifts/&
+inbox.tmp   -bg,intr,retrans=5,retry=3,timeo=11,proto=udp nrt:/export/isdc/run/ifts/&

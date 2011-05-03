@@ -15,9 +15,6 @@
 #
 ###############################################################################
 
-MDIFDir     -bg,intr,retrans=5,retry=3,timeo=11,proto=udp \
-              arcingest:/export/disk_isdc_ops_central/isdc/run/ingest/&
-MDIFTmpDir  -bg,intr,retrans=5,retry=3,timeo=11,proto=udp \
-              arcingest:/export/disk_isdc_ops_central/isdc/run/ingest/&
-queue       -bg,intr,retrans=5,retry=3,timeo=11,proto=udp \
-              arcingest:/export/disk_isdc_ops_central/isdc/run/ingest/&
+MDIFDir     -bg,intr,retrans=5,retry=3,timeo=11,proto=udp  arcingest:/export/disk_isdc_ops_central/isdc/run/ingest/&
+MDIFTmpDir  -bg,intr,retrans=5,retry=3,timeo=11,proto=udp  arcingest:/export/disk_isdc_ops_central/isdc/run/ingest/&
+queue       -bg,intr,retrans=5,retry=3,timeo=11,proto=udp  arcingest:/export/disk_isdc_ops_central/isdc/run/ingest/&

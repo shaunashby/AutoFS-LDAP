@@ -27,5 +27,5 @@ ops_for_rttmd	-rw,nosuid,hard,intr,bg,retry=1,timeo=11,proto=udp    nrtdr:/expor
 ops_1 	        -rw,nosuid,hard,intr,bg,retry=1,timeo=11,proto=udp    archive3:/export/nrtraid/isdc/nrt/&
 
 # Mountpoints to interface with the new operations setup:
-pck		-rw,nosuid,hard,intr,bg,retry=1,timeo=11,proto=udp    nrt.integral.ops:/export/isdc/nrt/&
-ops 	        -rw,nosuid,hard,intr,bg,retry=1,timeo=11,proto=udp    nrt.integral.ops:/export/isdc/nrt/& 
+pck		-rw,nosuid,hard,intr,bg,retry=1,timeo=11,proto=udp    nrt:/export/isdc/nrt/&
+ops 	        -rw,nosuid,hard,intr,bg,retry=1,timeo=11,proto=udp    nrt:/export/isdc/nrt/& 
