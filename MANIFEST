@@ -12,6 +12,7 @@ t/00-load.t
 t/01-autofs-master.t
 t/02-autofs-table.t
 t/03-autofs-table-entry.t
+t/04-autofs-config.t
 t/pod-coverage.t
 t/pod.t
 test.pl
