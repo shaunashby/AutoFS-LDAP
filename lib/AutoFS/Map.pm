@@ -44,7 +44,7 @@ sub _read() {
 
     map {
 	if ($_ !~ /^#/) {
-	    if (my ($key, $opts, $location) = ($_ =~ m|([a-zA-Z0-9_]*)\s+([a-zA-Z0-9-_=,]*)\s+([a-zA-Z0-9:&/]*)|g)) {
+	    if (my ($key, $opts, $location) = ($_ =~ m|(.*?)\s+([a-zA-Z0-9-_=,]*)\s+([a-zA-Z0-9:&/_\.]*)|g)) {
 		push(@{$self->{entries}}, AutoFS::Map::Entry->new(
 			 {
 			     key => $key,
