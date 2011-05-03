@@ -1,0 +1,6 @@
+/home	auto_home
+/isdc_data           auto_isdc_data
+/isdc_run/alert      auto_isdc_run_alert
+/isdc_run/ifts       auto_isdc_run_ifts
+/isdc/arc/rev_2/obs_isgri      auto_isdc_arc_rev_2_obs_isgri
+/archive/50GB		auto_isdc_arc
