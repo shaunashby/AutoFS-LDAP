@@ -10,3 +10,4 @@ AutoFS-LDAP-*
 cover_db
 *~
 .include*
+autofs.ldif
