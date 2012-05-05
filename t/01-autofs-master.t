@@ -13,11 +13,13 @@
 use strict;
 use warnings;
 
+use FindBin qw($Bin);
+
 use Test::More tests => 8;
 
 use AutoFS::Map::Master;
 
-my $master = AutoFS::Map::Master->new( { map_name => 'auto_master' });
+my $master = AutoFS::Map::Master->new( { project_base => $Bin."/..", map_name => 'auto_master' });
 
 cmp_ok(ref($master),'eq','AutoFS::Map::Master');
 can_ok($master,"map_name");

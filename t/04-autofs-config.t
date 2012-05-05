@@ -6,12 +6,12 @@ use Test::More tests => 2;
 
 use AutoFS::Config qw(:all);
 
-cmp_ok(AUTOMOUNT_LDAP_BASE_DN,'eq','ou=autofs,ou=Services,dc=integral,dc=ops');
+cmp_ok(AUTOMOUNT_LDAP_BASE_DN,'eq','ou=autofs,ou=Services,dc=test,dc=com');
 
 my $map_name = '/testing';
 
 my $expected_automount_map_entry = "
-dn: automountMapName=/testing,ou=autofs,ou=Services,dc=integral,dc=ops
+dn: automountMapName=/testing,ou=autofs,ou=Services,dc=test,dc=com
 objectClass: top
 objectClass: automountMap
 automountMapName: /testing";

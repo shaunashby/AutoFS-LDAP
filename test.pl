@@ -4,13 +4,15 @@ use strict;
 use warnings;
 use Template;
 
+use FindBin qw($Bin);
+
 use AutoFS::Map::Master;
 
-use constant AUTOFS_LDAP_BASE_DN => 'dc=integral,dc=ops';
+use constant AUTOFS_LDAP_BASE_DN => 'dc=test,dc=com';
 
 my $outFile = "./autofs.ldif";
 my $template;
-my $master = AutoFS::Map::Master->new( { map_name => "auto_master" } );
+my $master = AutoFS::Map::Master->new( { project_base => $Bin, map_name => "auto_master" } );
 
 $template = Template->new( { } ) || die Template->error(), "\n";
 $template->process(\*DATA, { master_map => $master, ldap_base_dn => AUTOFS_LDAP_BASE_DN }, $outFile);

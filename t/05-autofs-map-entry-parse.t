@@ -2,11 +2,13 @@
 use strict;
 use warnings;
 
+use FindBin qw($Bin);
+
 use Test::More tests => 2;
 
 use AutoFS::Map::Master;
 
-my $master = AutoFS::Map::Master->new( { map_name => 'auto_master' });
+my $master = AutoFS::Map::Master->new( { project_base => $Bin."/..", map_name => 'auto_master' });
 my $map = $master->getMap('/isdc/arc/rev_2/obs_isgri');
 
 cmp_ok(ref($map),'eq','AutoFS::Map');
