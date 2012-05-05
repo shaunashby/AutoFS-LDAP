@@ -29,7 +29,7 @@ sub new() {
     bless($self, $class);
 
     # Simple validation:
-    map { exists($self->{$_}) || croak "Must have attribute $_" } qw(map_name);
+    map { exists($self->{$_}) || croak "Must have attribute $_" } qw(project_base map_name);
     # Now read it:
     $self->_read( $self->{map_name} );
 
@@ -52,7 +52,9 @@ sub _read() {
     map {
 	if ($_ !~ /^#/ && $_ !~ m|^/net|) {
 	    if (my ($mountpoint,$mapname) = ($_ =~ m|(^/.*[^\s])\s+(.*?)$|g)) {
-		push(@{$self->{maps}}, AutoFS::Map->new( { mountpoint => $mountpoint, map_name => $mapname } ));
+		push(@{$self->{maps}}, AutoFS::Map->new( { project_base => $self->_project_base(),
+							   mountpoint => $mountpoint,
+							   map_name => $mapname } ));
 	    }
 	}
     } @{ $self->{content} };

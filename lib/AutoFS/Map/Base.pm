@@ -53,10 +53,12 @@ sub map_name() { return shift->{map_name} }
 
 sub map_file() { return shift->{map_file} }
 
+sub _project_base() { return shift->{project_base} }
+
 sub _read() {
     my ($self,$map_name) = @_;
 
-    $self->{map_file} = AUTOMOUNT_CONFIG_DIR.'/'.$map_name;
+    $self->{map_file} = $self->_project_base()."/".AUTOMOUNT_CONFIG_DIR.'/'.$map_name;
     croak sprintf("Unable to read automount map file %s",$self->{map_file}) unless (-f $self->{map_file});
 
     push(@{ $self->{content} }, Path::Class::File->new($self->{map_file})->slurp( chomp => 1 ) );

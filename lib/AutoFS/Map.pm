@@ -28,7 +28,7 @@ sub new() {
     my $self = $class->SUPER::new(@_);
 
     bless($self, $class);
-    
+
     # Simple validation:
     map { exists($self->{$_}) || croak "Must have attribute $_" } qw(mountpoint map_name);
     # Now read it:

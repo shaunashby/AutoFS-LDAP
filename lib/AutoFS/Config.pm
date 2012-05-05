@@ -25,11 +25,10 @@ AUTOMOUNT_MAP_LDAP_DN
 
 @EXPORT_OK = ( @{ $EXPORT_TAGS{'all'} } );
 
-use constant PROJECT_BASE_DIR 		=> $ENV{'HOME'}.'/Desktop/Workspace/Projects/AutoFS-LDAP';
-use constant AUTOMOUNT_CONFIG_DIR 	=> PROJECT_BASE_DIR."/automount";
-use constant AUTOMOUNT_LDAP_BASE_DN     => 'ou=autofs,ou=Services,dc=integral,dc=ops';
+use constant AUTOMOUNT_CONFIG_DIR 	=> "/automount";
+use constant AUTOMOUNT_LDAP_BASE_DN     => 'ou=autofs,ou=Services,dc=test,dc=com';
 use constant AUTOMOUNT_MAP_LDAP_DN      => "
-dn: automountMapName=%s,ou=autofs,ou=Services,dc=integral,dc=ops
+dn: automountMapName=%s,ou=autofs,ou=Services,dc=test,dc=com
 objectClass: top
 objectClass: automountMap
 automountMapName: %s";
